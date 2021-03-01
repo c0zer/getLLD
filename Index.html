@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style2biometria.css">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNWLYAgcNrXcU6gt5VDBrgxEi8-_npaBU&callback=initMap&libraries=&v=weekly" defer></script>
+        <title>Koordinat Till LLD</title>
+    </head>
+
+    <body>
+
+        <div id="main" class="main">
+            
+                <h1>Koordinater till LLD konverter</h1>
+
+                <p>Denna applikation tillåter dig att mha. angivna koordinater (Latitud, Longitud), söka fram den LKF-kod dessa koordinater finns inom och sedan konvertera <br> LKF-koden till motsvarande LLD-kod.</p>
+            
+            <div id="map"></div>
+
+            
+            <form id="coordinates" onsubmit="setInputValue();setQueryParams();getPlaceInfo()">
+                <label for ="lat">Koordinat Latitud:</label><br>
+                <input type="text" id="lat"  minlength="9" maxlength="9" pattern="[0-9.]{9}" title="Formatet ska vara 62.577294" required value="" placeholder="Latitud.."><br>
+                <label for ="long">Koordinat Longitud:</label><br>
+                <input type="text" id="long" minlength="9" maxlength="9" pattern="[0-9.]{9}" title="Formatet ska vara 17.418019" required value="" placeholder="Longitud.."><br>
+                <label for="radius">Radius:</label><br>
+                <input type="text" id="radius" name="radius" minlength="1" maxlength="5" value="20000"><br>
+                <input type="submit" id="hitta" value="Hitta LKF!">
+            </form>
+
+            <button onclick="getPlatser()" id="getLldButton">Konvertera till LLD!</button> <!--Ta bort knappen och låt hitta-knapp köra denna funktion också?-->
+
+                <h3 id = "LKFtext">LKF:</h3> 
+                <h3 id = "LKFvalue"></h3>
+                <h3 id = "LLDtext">LLD:</h3>
+                <h3 id = "LLDvalue"></h3>
+        </div>
+
+    <script src="live-server.js"></script>
+    <script src="script2.js"></script>
+
+    </body>
+</html>

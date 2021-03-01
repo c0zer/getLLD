@@ -1,0 +1,91 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url("fog-3622519_1920.jpg");
+  text-align: center;
+}
+
+.main {
+    margin: auto;
+    width: 1280px;
+    padding: 10px;
+    background-color:rgba(0, 0, 0, 0.4);
+    height: 1150px;
+    position: relative;
+}
+
+h3{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+p {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+#coordinates label {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: large;
+}
+
+input {
+    width: 30%;
+    padding: 6px 20px;
+    font-size: large;
+}
+
+#getLldButton {
+    border: solid 1px;
+    padding: 15px 32px;
+    transition: 0.4s;
+    width: 33.3%;
+    background-color: transparent;
+    color: white;
+    margin-top: 10px;
+    font-size: large;
+}
+
+#getLldButton:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    transform: scale(1.1);
+}
+
+#hitta {
+    border: solid 1px;
+    padding: 15px 32px;
+    transition: 0.4s;
+    width: 33.3%;
+    background-color: transparent;
+    color: white;
+    margin-top: 10px;
+    font-size: large;
+}
+
+#hitta:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    transform: scale(1.1);
+}
+
+#map {
+    height: 40%;
+    width: 100%;
+    margin: auto;
+  }
+
+#LKFvalue {
+  
+}
+
+#LLDvalue {
+    float: right;
+}
