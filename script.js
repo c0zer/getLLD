@@ -13,7 +13,7 @@ form.addEventListener('submit', handleForm);
 //fetch to localhost for json-response with all LKF + LLD's
 function getPlatser() {
 
-	fetch('http://83.68.244.185:2020')
+	fetch('https://83.68.244.185:2020')
 		.then(response => response.json())
 		.then(data => {
 			let platser = data;
