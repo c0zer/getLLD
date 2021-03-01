@@ -1,5 +1,5 @@
 //Beautified code, use this instead?
-let url = new URL("http://api.svenskakyrkan.se/platser/v3/place?apikey=70171abf-9a81-41dc-86c8-92be4675a501");
+let url = new URL("https://api.svenskakyrkan.se/platser/v3/place?apikey=70171abf-9a81-41dc-86c8-92be4675a501");
 let params = new URLSearchParams(url.search);
 
 //Remove redirecting when submit-button is clicked
