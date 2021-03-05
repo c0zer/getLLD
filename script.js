@@ -1,5 +1,7 @@
-//Beautified code, use this instead??
+//Beautified code, use this instead?
 let url = new URL("https://api.svenskakyrkan.se/platser/v3/place?apikey=70171abf-9a81-41dc-86c8-92be4675a501");
+let url2 = new URL("https://lldserver.herokuapp.com/");
+let localurl = new URL("http://localhost:2020");
 let params = new URLSearchParams(url.search);
 
 //Remove redirecting when submit-button is clicked
@@ -10,19 +12,19 @@ function handleForm(event) {
 }
 form.addEventListener('submit', handleForm);
 
-//fetch to localhost for json-response with all LKF + LLD's
+//fetch to server/localhost for json-response with all LKF + LLD's
 function getPlatser() {
 
-	fetch('https://83.68.244.185:2020')
+	fetch(url2)
 		.then(response => response.json())
 		.then(data => {
 			let platser = data;
 			let LLD = platser[0].LLD
-			let LKF = document.getElementById("LKFvalue").innerText
+			let LKF = document.getElementById("LKFvalue").value
 
 			for (const plats of platser) {
 				if (plats.LKF == LKF)
-					document.getElementById("LLDvalue").innerHTML = plats.LLD;
+					document.getElementById("LLDvalue").value = plats.LLD;
 			}
 		})
 }
@@ -41,7 +43,8 @@ function getPlaceInfo() {
 	.then(response => response.json())
 		.then(data => {
 			let LKF = data.Results[0].AdmInfoSe.LkfInfo[0].Lkf
-			document.getElementById("LKFvalue").innerHTML = LKF;
+			document.getElementById("LKFvalue").value = LKF;
+			getPlatser();
 		})
 		.catch(err => alert(err + '\nTesta att höja radius och anropa igen'));
 }
