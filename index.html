@@ -14,26 +14,33 @@
             
                 <h1>Koordinater till LLD konverter</h1>
 
-                <p>Denna applikation tillåter dig att mha. angivna koordinater (Latitud, Longitud), söka fram den LKF-kod dessa koordinater finns inom och sedan konvertera <br> LKF-koden till motsvarande LLD-kod.</p>
+                <p id="explanation">Denna applikation tillåter dig att mha. angivna koordinater (Latitud, Longitud), söka fram den LKF-kod dessa koordinater finns inom och sedan konvertera <br> LKF-koden till motsvarande LLD-kod.
+                </p>
             
             <div id="map"></div>
 
-            <form id="coordinates" onsubmit="setInputValue();setQueryParams();getPlaceInfo()">
+        <div id="textAndButtons" >
+            <form id="coordinates" onsubmit="setInputValue();setQueryParams();getPlaceInfo();getPlatser()">
                 <label for ="lat">Koordinat Latitud:</label><br>
                 <input type="text" id="lat"  minlength="9" maxlength="9" pattern="[0-9.]{9}" title="Formatet ska vara 62.577294" required value="" placeholder="Latitud.."><br>
                 <label for ="long">Koordinat Longitud:</label><br>
                 <input type="text" id="long" minlength="9" maxlength="9" pattern="[0-9.]{9}" title="Formatet ska vara 17.418019" required value="" placeholder="Longitud.."><br>
-                <label for="radius">Radius:</label><br>
+                <label for="radius">Radius (i meter):</label><br>  <!--Ta bort radius?-->
                 <input type="text" id="radius" name="radius" minlength="1" maxlength="5" value="20000"><br>
-                <input type="submit" id="hitta" value="Hitta LKF!">
+                <input type="submit" id="hitta" value="Hitta LKF och LLD!">
             </form>
 
-            <button onclick="getPlatser()" id="getLldButton">Konvertera till LLD!</button> <!--Ta bort knappen och låt hitta-knapp köra denna funktion också?-->
+            <form id="codes">
+                <label for ="LKFtext" id="LKFtext">LKF:</label><br>
+                <input id = "LKFvalue" minlength="6" maxlength="6" pattern="[0-9]{6}"> <br>
+                <label for ="LLDtext" id="LLDtext">LLD:</label><br>
+                <input id = "LLDvalue" minlength="6" maxlength="6" pattern="[0-9]{6}"><br>
+            </form>
 
-                <h3 id = "LKFtext">LKF:</h3> 
-                <h3 id = "LKFvalue"></h3>
-                <h3 id = "LLDtext">LLD:</h3>
-                <h3 id = "LLDvalue"></h3>
+            <button onclick="getPlatser()" id="getLldButton">Endast konvertera!</button> <!--Ta bort knappen och låt hitta-knapp köra denna funktion också? Funkar men kan då inte konvertera endast från LKF-->
+
+        </div>
+        
         </div>
 
     <script src="script.js"></script>
