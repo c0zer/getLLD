@@ -95,6 +95,13 @@ function initMap() {
 		infoWindow.setContent(
 			JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
 		);
+		//Print to input fields
+		let svar = mapsMouseEvent.latLng.toJSON();
+		lat = svar.lat;
+		lng = svar.lng;
+		document.getElementById("lat").value = lat.toPrecision(8)
+		document.getElementById("long").value = lng.toPrecision(8)
+		
 		infoWindow.open(map);
 	});
 }
