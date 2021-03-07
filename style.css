@@ -4,21 +4,32 @@ body {
   margin: 0;
   padding: 0;
   background-image: url("fog-3622519_1920.jpg");
-  text-align: center;
 }
 
 .main {
     margin: auto;
     width: 1280px;
-    padding: 10px;
+    padding: 0px;
     background-color:rgba(0, 0, 0, 0.4);
-    height: 1150px;
+    height: 1000px;
     position: relative;
+}
+
+#guideheader {
+    text-align: center;
 }
 
 h3{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: white;
+    width: 95%;
+    margin: auto;
+}
+
+h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    margin: auto;
 }
 
 h1 {
@@ -28,14 +39,15 @@ h1 {
     font-weight: 300;
 }
 
-#explanation {
+.explanation {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: white;
+    width: 95%;
+    margin: auto;
 }
 
 #coordinates label {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: bold;
     color: white;
     font-size: large;
 }
@@ -79,15 +91,79 @@ input {
 }
 
 #map {
-    height: 60%;
-    width: 60%;
+    height: 700px;
+    width: 750px;
     margin: auto;
     float: left;
+    margin-left: 10px;
   }
 
+#textAndButtons {
+    text-align: center;
+}
+
 #codes label {
+    text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: bold;
     color: white;
     font-size: large;
+}
+
+footer {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    border-top: solid 1px white;
+}
+
+.contactinfo {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    margin-top: 10px;
+    float: right;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border-bottom: solid 1px white;
+  }
+  
+li {
+    float: right;
+    font-size: 20px;
+  }
+
+#PlatsVerktyget {
+    float: left;
+    font-size: 20px;
+  }
+  
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin-right: 12px;
+    width: 200px;
+  }
+  
+li a:hover {
+    transition: 0.4s;
+    background-color: rgba(0, 0, 0, 0.6);
+    transform: scale(1.1);
+  }
+
+#caseA {
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+#caseB {
+    margin: auto;
+    margin-bottom: 10px;
 }
