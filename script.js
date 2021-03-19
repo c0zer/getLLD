@@ -1,4 +1,3 @@
-//Beautified code, use this instead?
 let url = new URL("https://api.svenskakyrkan.se/platser/v3/place?apikey=70171abf-9a81-41dc-86c8-92be4675a501");
 let url2 = new URL("https://lldserver.herokuapp.com/");
 let localurl = new URL("http://localhost:2020");
@@ -12,20 +11,19 @@ function handleForm(event) {
 }
 form.addEventListener('submit', handleForm);
 
-//fetch to server/localhost for json-response with all LKF + LLD's
+//fetch to server for json-response with all place info
 function getPlatser() {
 
 	fetch(url2)
 		.then(response => response.json())
 		.then(data => {
 			let platser = data;
-			let LLD = platser[0].LLD
-			let LKF = document.getElementById("LKFvalue").value
-
+			let LKF = document.getElementById("LKFvalue").value;
 			for (const plats of platser) {
 				if (plats.LKF == LKF)
-					document.getElementById("LLDvalue").value = plats.LLD;
+					document.getElementById("LLDvalue").value = plats.LLD + ', ' + plats.Distrikt;
 			}
+			
 		})
 }
 
@@ -43,6 +41,7 @@ function getPlaceInfo() {
 	.then(response => response.json())
 		.then(data => {
 			let LKF = data.Results[0].AdmInfoSe.LkfInfo[0].Lkf
+			let Kommun = data.Results[0].AdmInfoSe.LkfInfo[0].KommunNamn
 			document.getElementById("LKFvalue").value = LKF;
 			getPlatser();
 		})
