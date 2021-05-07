@@ -3,6 +3,9 @@ let url2 = new URL("https://lldserver.herokuapp.com/");
 let localurl = new URL("http://localhost:2020");
 let params = new URLSearchParams(url.search);
 
+let radius = 1000;
+document.getElementById("radius").value = radius;
+
 //Remove redirecting when submit-button is clicked
 var form = document.getElementById("coordinates");
 
@@ -45,7 +48,18 @@ function getPlaceInfo() {
 			document.getElementById("LKFvalue").value = LKF;
 			getPlatser();
 		})
-		.catch(err => alert(err + '\nTesta att höja radius och anropa igen'));
+		.catch(function() {
+			incrementRadius();
+			setInputValue();
+			setQueryParams();
+			getPlaceInfo();
+		});
+}
+
+function incrementRadius() {
+	let x = 1000;
+	radius += x;
+	document.getElementById("radius").value = radius;
 }
 
 //Set value of input fields
@@ -54,7 +68,6 @@ function setInputValue() {
 	document.getElementById("long").innerHTML = long;
 	let lat = document.getElementById("lat").value;
 	document.getElementById("lat").innerHTML = lat;
-	let radius = document.getElementById("radius").value;
 	document.getElementById("radius").innerHTML = radius;
 }
 
@@ -100,7 +113,15 @@ function initMap() {
 		lng = svar.lng;
 		document.getElementById("lat").value = lat.toPrecision(8)
 		document.getElementById("long").value = lng.toPrecision(8)
-		
+
+		//Reset radius
+		radius = 1000;
+		document.getElementById("radius").value = 1000;
+
+		//Reset LKF and LLD
+		document.getElementById("LKFvalue").value = null;
+		document.getElementById("LLDvalue").value = null;
+
 		infoWindow.open(map);
 	});
 }
