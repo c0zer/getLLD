@@ -4,10 +4,17 @@ let localurl = new URL("http://localhost:2020");
 let params = new URLSearchParams(url.search);
 
 let radius = 1000;
-document.getElementById("radius").value = radius;
 
 //Remove redirecting when submit-button is clicked
 var form = document.getElementById("coordinates");
+
+function handleForm(event) {
+	event.preventDefault();
+}
+form.addEventListener('submit', handleForm);
+
+//Remove redirecting when submit-button is clicked
+var form = document.getElementById("codes");
 
 function handleForm(event) {
 	event.preventDefault();
@@ -59,7 +66,6 @@ function getPlaceInfo() {
 function incrementRadius() {
 	let x = 1000;
 	radius += x;
-	document.getElementById("radius").value = radius;
 }
 
 //Set value of input fields
@@ -68,13 +74,12 @@ function setInputValue() {
 	document.getElementById("long").innerHTML = long;
 	let lat = document.getElementById("lat").value;
 	document.getElementById("lat").innerHTML = lat;
-	document.getElementById("radius").innerHTML = radius;
 }
 
 //Set query parameters from input field values
 function setQueryParams() {
 	params.set('nearby', document.getElementById("long").value + ',' + document.getElementById("lat").value); //longitud + latitud
-	params.append('nearbyRadius', document.getElementById("radius").value); // radius, default 2000 (2km)
+	params.append('nearbyRadius', radius); // radius, default 2000 (2km)
 	url.search = params.toString();
 	let new_url = url.toString();
 	params.delete('nearbyRadius')
@@ -84,7 +89,8 @@ function setQueryParams() {
 function initMap() {
 	const myLatlng = {
 		lat: 62.393639,
-		lng: 17.312222
+		lng: 17.312222,
+		abc: 123
 	};
 	const map = new google.maps.Map(document.getElementById("map"), {
 		zoom: 8,
@@ -116,7 +122,6 @@ function initMap() {
 
 		//Reset radius
 		radius = 1000;
-		document.getElementById("radius").value = 1000;
 
 		//Reset LKF and LLD
 		document.getElementById("LKFvalue").value = null;
