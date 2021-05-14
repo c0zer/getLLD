@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylev2.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNWLYAgcNrXcU6gt5VDBrgxEi8-_npaBU&callback=initMap&libraries=&v=weekly" defer></script>
+    <title>AnvändarHandbok</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm green">
+        <h1 id="navTitle"class="text-center">PlatsVerktyget</h1>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="C:\Users\Kare\Desktop\PlatsVerktyget v2/Indexv2.html">Start</a></li> 
+            <li class="nav-item"><a class="nav-link" href="C:\Users\Kare\Desktop\PlatsVerktyget v2/guidev2.html">AnvändarHandbok</a></li>
+            <li class="nav-item"><a class="nav-link" href="http://latlong.mellifica.se/" target="_blank">KoordinatKonvertering</a></li>
+        </ul>
+    </nav>
+
+    <div class="container-fluid text-black pt-3" style="height:100%; width:100%;">
+
+        <div id="guideheader">
+            <h2><b>AnvändarHandbok</b></h2>
+        </div>
+
+        <p class="explanation">PlatsVerktyget kan användas för att underlätta hantering av koordinater, LKF- och LLD-koder. Det finns 3 användningsfall för PlatsVerktyget och dessa beskrivs nedan.</p>
+
+        <hr>
+
+        <div id="caseA">
+            <h3><b>Markerad plats på karta till LKF/LLD-kod</b></h3>
+            <p class="explanation">
+                <i>Jag vill veta vilken LKF-kod och eller/LLD-kod som en utpekad plats på kartan tillhör.</i><br><br>
+                1. Markera önskad plats på kartan.<br>
+                2. Koordinaterna syns i dialogrutan och kopieras automatiskt till Latitud respektive Longitud-fälten.<br>
+                3. Klicka på Hitta LKF och LLD.<br>
+                4. I fälten LKF-kod och LLD-kod visas den LKF och LLD-kod som den utpekade platsen tillhör.
+            </p>
+        </div>
+
+        <hr>
+
+        <div id="caseB">
+            <h3><b>Inskrivna koordinater till LKF och LLD</b></h3>
+            <p class="explanation">
+                <i>Jag har koordinater till en plats och vill veta vilken LKF-kod och eller/LLD-kod som dessa tillhör.</i><br><br>
+                1. Ange dina koordinater i koordinat-fälten. Det koordinatformat som används är WGS84, nedan är ett exempel på formatet:<br>
+                <i>Koordinat Latitud: 62.820359<br>
+                Koordinat Longitud: 16.827751</i><br><br>
+                2. Klicka på Hitta LKF och LLD.<br>
+                3. I fältet LLD-kod visas den LLD-kod och namn på distriktet som som motsvarar den angivna LKF-koden..
+            </p>
+        </div>
+
+        <hr>
+
+        <div id="caseC">
+            <h3><b>LKF-kod till LLD-kod</b></h3>
+            <p class="explanation">
+                <i>Jag har en LKF-kod och vill veta vilken LLD-kod som motsvarar denna.</i><br><br>
+                1. Skriv in din LKF-kod i LKF-fältet.<br>
+                2. Klicka på Endast konvertera!<br>
+                3. Svaret visar den LLD-kod och namn på distriktet som som motsvarar den angivna LKF-koden.<br>
+            </p>
+        </div>
+
+        <hr>
+
+        <div id="coordinateConversion">
+            <h3><b>Koordinatkonvertering mellan olika format</b></h3>
+            <p class="explanation">
+                I navigationsmenyn finns en länk till <a id="mellifica" href="http://latlong.mellifica.se/" target="_blank">http://latlong.mellifica.se/</a> som är ett gratisverktyg för att konvertera koordinater till och från olika format.
+                På så sätt kan du få koordinater i det format du önskar.
+            </p>
+        </div>
+    </div>
+    <footer class="page-footer font-small bg-dark pt-4">
+        <div id="contactInfo" class="text-center p-3">
+            <h6>Kontaktuppgifter</h6>
+            Johan Karinaho <br>
+            E-post: johan.karinaho@biometria.se
+        </div>
+    </footer>
+</body>
+</html>

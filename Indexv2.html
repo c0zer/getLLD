@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylev2.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNWLYAgcNrXcU6gt5VDBrgxEi8-_npaBU&callback=initMap&libraries=&v=weekly" defer></script>
+    <title>PlatsVerktyget</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm green" >
+        <h1 id="navTitle"class="text-center">PlatsVerktyget</h1>
+        <ul class="navbar-nav">
+           <li class="nav-item"><a class="nav-link" href="C:\Users\Kare\Desktop\PlatsVerktyget v2/Indexv2.html">Start</a></li> 
+           <li class="nav-item"><a class="nav-link" href="C:\Users\Kare\Desktop\PlatsVerktyget v2/guidev2.html">AnvändarHandbok</a></li>
+           <li class="nav-item"><a class="nav-link" href="http://latlong.mellifica.se/" target="_blank">KoordinatKonvertering</a></li>
+       </ul>
+    </nav>
+
+    <div class="container-fluid text-white pt-3" style="height:100%; width:100%;">
+        
+        <div class="float-sm-left" id="map"></div>
+
+            <div class="container float-right mw-100" id="textAndButtons">
+                <form class="forms" id="coordinates" onsubmit="setInputValue();setQueryParams();getPlaceInfo();getPlatser()">
+                    <label for ="lat"><h4><b>Koordinat Latitud</b></h4></label>
+                    <input class="form-control" type="text" id="lat"  minlength="9" maxlength="9" pattern="[0-9.]{9}" title="Formatet ska vara 62.577294" required value="" placeholder="Latitud.."><br>
+                    <label for ="long"><h4><b>Koordinat Longitud</b></h4></label>
+                    <input class="form-control" type="text" id="long" minlength="9" maxlength="9" pattern="[0-9.]{9}" title="Formatet ska vara 17.418019" required value="" placeholder="Longitud..">
+                    <input type="submit" class="btn btn-primary form-control" id="hitta" value="Hitta LKF och LLD!">
+                </form>
+                <form class="forms pt-3" id="codes" onsubmit="getPlatser()">
+                    <label for ="LKFtext" id="LKFtext"><h4><b>LKF-kod</b></h4></label>
+                    <input class="form-control" id = "LKFvalue" minlength="6" maxlength="6" pattern="[0-9]{6}" placeholder="LKF-kod.."><br>
+                    <label for ="LLDtext" id="LLDtext"><h4><b>LLD-kod</b></h4></label>
+                    <input class="form-control" id = "LLDvalue" minlength="6" maxlength="6" placeholder="LLD-kod.." readonly>
+                    <input type="submit" onclick="getPlatser()" class="btn btn-primary form-control" id="getLldButton" value="Endast konvertera!">
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer font-small bg-dark pt-4">
+        <div id="contactInfo" class="text-center p-3">
+            <h6>Kontaktuppgifter</h6>
+            Johan Karinaho <br>
+            E-post: johan_karinaho@hotmail.com
+        </div>
+    </footer>
+    
+    <script src="scriptv2.js"></script>
+</body>
+</html>

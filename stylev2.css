@@ -1,0 +1,114 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+
+#map {
+    /*min-height: 93%;
+    min-width: 80% !important;*/
+    height: 90%;
+    width: 80%;
+}
+
+#map:active {
+    outline: none;
+    box-shadow: none !important;
+}
+
+a {
+    color: white;
+}
+
+#textAndButtons {
+    width: 19%;
+    background-color: #DFDCD8;
+    padding: 15px;
+    height: 90%;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.green {
+     background-color: #39B637;
+}
+
+.btn {
+     background-color: #A2C617;
+     border: none;
+     margin-top: 10px;
+}
+
+.btn:hover {
+     background-color: #A2C617;
+     opacity: 75%;
+     border: none;
+     outline: none;
+     box-shadow: none!important;
+}
+  
+.btn:focus{
+    background: #A2C617!important;
+    outline: none;
+    box-shadow: none !important;
+}
+  
+.btn:active{
+    background: #A2C617!important;
+    outline: none;
+    box-shadow: none !important;
+}
+
+.gm-style {
+     color: black;
+}
+
+a:hover {
+     color: #DFDCD8;
+}
+
+h1 {
+    color: white;
+}
+
+#navTitle {
+     color: white;
+     margin-right: 50px;
+}
+
+#mellifica {
+     color: blue;
+}
+
+h4 {
+     margin-bottom: -5px;
+}
+
+@media (max-width: 992px) {
+    #textAndButtons {
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+  }
+
+@media (max-width: 992px) {
+    #map {
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+}
+
+.page-footer {
+    background-color: #363839 !important;
+}
+
+#contactInfo {
+    color: #bfbfbf;
+}
+
+::placeholder {
+    opacity: 0.5 !important;
+}
