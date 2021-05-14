@@ -112,3 +112,13 @@ h4 {
 ::placeholder {
     opacity: 0.5 !important;
 }
+
+@media (max-width: 992px) {
+    .page-footer {
+        position: relative;
+        margin-top: 150px; /* negative value of footer height */
+        height: 150px;
+        clear:both;
+        padding-top:20px;
+    }
+}
