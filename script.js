@@ -14,7 +14,7 @@ function handleForm(event) {
 form.addEventListener('submit', handleForm);
 
 //Remove redirecting when submit-button is clicked
-var form = document.getElementById("codes");
+var form = document.getElementById("form2");
 
 function handleForm(event) {
 	event.preventDefault();
