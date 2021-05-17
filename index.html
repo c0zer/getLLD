@@ -22,7 +22,7 @@
        </ul>
     </nav>
 
-    <div class="container-fluid text-white pt-3" style="height:100%; width:100%;">
+    <div id="mainContainer" class="container-fluid text-white pt-3" style="height:100%; width:100%;">
         
         <div class="float-sm-left" id="map"></div>
 
@@ -34,7 +34,8 @@
                     <input class="form-control" type="text" id="long" minlength="9" maxlength="9" pattern="[0-9.]{9}" title="Formatet ska vara 17.418019" required value="" placeholder="Longitud..">
                     <input type="submit" class="btn btn-primary form-control" id="hitta" value="Hitta LKF och LLD!">
                 </form>
-                <form class="forms pt-3" id="codes" onsubmit="getPlatser()">
+                
+                <form id="form2" class="forms pt-3" id="codes" onsubmit="getPlatser()">
                     <label for ="LKFtext" id="LKFtext"><h4><b>LKF-kod</b></h4></label>
                     <input class="form-control" id = "LKFvalue" minlength="6" maxlength="6" pattern="[0-9]{6}" placeholder="LKF-kod.."><br>
                     <label for ="LLDtext" id="LLDtext"><h4><b>LLD-kod</b></h4></label>
@@ -54,6 +55,6 @@
         </div>
     </footer>
     
-    <script src="script.js"></script>
+    <script src="scriptv2.js"></script>
 </body>
 </html>
